@@ -5,6 +5,8 @@ import styles from './Main.module.css';
 import Home from './Home';
 import Stocks from './Stocks';
 import Currency from './Currency';
+import ETF from './ETF';
+import Forex from './Forex';
 
 
 //library
@@ -14,20 +16,22 @@ function Main() {
 
     return(
         <div className={styles.Main}>
-            <h1>Main</h1>
+            <h1>Header : Financial Logging /Net Worth App</h1>
             <BrowserRouter>
-                <nav>
-                <Link to= "/">Home</Link>
-                <Link to= "/currency">Currency</Link>
-                <Link to= "/stocks">Stocks</Link>
-
+                <nav className={styles.navbar}>
+                    <Link className={styles.link} to= "/">Home</Link>
+                    <Link className={styles.link} to= "/currency">Currency</Link>
+                    <Link className={styles.link} to= "/stocks">Stocks</Link>
+                    <Link className={styles.link} to= "/etf">ETF</Link>
+                    <Link className={styles.link} to= "/forex">Forex</Link>
                 </nav>
                 <Routes>
                     <Route path ="/" element ={<Home />} />
                     <Route path = "/currency" element={<Currency />} />
                     <Route path ="/stocks" element={<Stocks/>}/>
+                    <Route path = "/etf" element={<ETF />} />
+                    <Route path ="/forex" element={<Forex/>}/>
                 </Routes>
-
             </BrowserRouter>
         </div>
     );
