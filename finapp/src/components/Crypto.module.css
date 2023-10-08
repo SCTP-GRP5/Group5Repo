@@ -1,0 +1,38 @@
+.Crypto{
+    color:blue;
+    align-items: center;
+}
+
+.loading{
+    display:grid;
+    grid-template-columns: repeat(3,30%);
+    margin:auto;
+    width: 50%;
+    border: 2px solid blue;
+    /* padding-left: 20%; */
+    padding-top: 1%;
+    padding-bottom:1%;
+    grid-gap: 1%;
+    border-radius: 25px;
+}
+
+.loader{
+    display: "block";
+    margin: "0 auto";
+    color: rgb(0, 0, 255);
+    margin: 0 auto;
+    size: 200px;
+    padding-top: 10%;
+}
+
+.icon{
+    padding: 3%;
+    margin:auto;
+    width: auto;
+}
+
+table{
+
+    margin:auto;
+    width:60%;
+}

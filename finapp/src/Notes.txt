@@ -1,3 +1,6 @@
+//component division
+-------------------
+
 There will be 4 components
 
 Stella -ETF
@@ -6,4 +9,55 @@ Saran-Forex
 
 Sariha-Stocks
 
-Jian - TBD!
+Jian - CRYPTO!
+
+
+//libraries required for this app
+----------------------------------
+
+react router
+
+axios
+
+react spinners
+npm install --save react-spinners
+
+font awesome
+https://fontawesome.com/docs/web/use-with/react/
+
+1-
+npm i --save @fortawesome/fontawesome-svg-core
+
+2-
+# Free icons styles
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/free-regular-svg-icons
+npm i --save @fortawesome/free-brands-svg-icons
+
+3-
+# Pro icons styles
+npm i --save @fortawesome/pro-solid-svg-icons
+npm i --save @fortawesome/pro-regular-svg-icons
+npm i --save @fortawesome/pro-light-svg-icons
+npm i --save @fortawesome/pro-thin-svg-icons
+npm i --save @fortawesome/pro-duotone-svg-icons
+npm i --save @fortawesome/sharp-solid-svg-icons
+npm i --save @fortawesome/sharp-regular-svg-icons
+npm i --save @fortawesome/sharp-light-svg-icons
+
+4-
+npm i --save @fortawesome/react-fontawesome@latest
+
+5-
+npm install babel-plugin-macros
+
+https://fontawesome.com/docs/web/use-with/react/add-icons
+
+//add individual explicitly
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
+const element = <FontAwesomeIcon icon={faEnvelope} />
+
+ReactDOM.render(element, document.body)
