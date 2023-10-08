@@ -17,7 +17,7 @@ function ETF() {
         setIsLoading(true)
       const response = await axios.request(apiETF);
       setData(response.data.data)
-      console.log(data)
+      // console.log(data)
       // gotta access the inside of data, even .length produces an error
     } catch (error){
         console.log("❌ error: " + error.message);
