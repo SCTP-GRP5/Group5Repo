@@ -229,7 +229,7 @@ function Crypto({
   //=========================================================================================================================================
   return (
     <div className={styles.Crypto}>
-      <h1>Crypto</h1>
+      <h2>Crypto Exchange Rates- Select Crypto and Currency</h2>
 
       <loading className={styles.loading}>
         <FontAwesomeIcon
@@ -244,78 +244,83 @@ function Crypto({
 
         <FontAwesomeIcon icon={faServer} size="2xl" className={styles.icon} />
       </loading>
-      <button onClick={() => loadCrypto()}>Get Data</button>
-      <button
-        onClick={() => {
-          setCrypto([]);
-          setTimer(60);
-        }}
-      >
-        Reset Data
-      </button>
 
-      <select
-        name="from_currency"
-        onChange={handlerChange}
-        value={apiOptions["params"]["from_currency"]}
-      >
-        {cryptoOptions.map((item, index) => (
-          <option key={index} value={item.value}>
-            {item.name}{" "}
-          </option>
-        ))}
-        <button type="submit">Submit</button>
-      </select>
+      <controls className={styles.controls}>
+        <button className={styles.button} onClick={() => loadCrypto()}>Get Data</button>
+        <button
+          className={styles.button}
+          onClick={() => {
+            setCrypto([]);
+            setTimer(60);
+          }}
+        >
+          Reset Data
+        </button>
 
-      <select
-        name="to_currency"
-        onChange={handlerChange}
-        value={apiOptions["params"]["to_currency"]}
-      >
-        {currencyOptions.map((item, index) => (
-          <option key={index} value={item.value}>
-            {item.name}{" "}
-          </option>
-        ))}
-        <button type="submit">Submit</button>
-      </select>
+        <select
+          className={styles.select}
+          name="from_currency"
+          onChange={handlerChange}
+          value={apiOptions["params"]["from_currency"]}
+        >
+          {cryptoOptions.map((item, index) => (
+            <option key={index} value={item.value}>
+              {item.name}{" "}
+            </option>
+          ))}
+          <button type="submit">Submit</button>
+        </select>
+
+        <select
+          className={styles.select}
+          name="to_currency"
+          onChange={handlerChange}
+          value={apiOptions["params"]["to_currency"]}
+        >
+          {currencyOptions.map((item, index) => (
+            <option key={index} value={item.value}>
+              {item.name}{" "}
+            </option>
+          ))}
+          <button type="submit">Submit</button>
+        </select>
+      </controls>
+      
 
       {/* Manual Testing Mode */}
       {/* <button onClick={handlerTest}>Console Log Test</button> */}
 
       <div className={styles.timer}>
         <p>
-          {" "}
-          Auto Logger loads in {time >= 0 ? time : "[Standby ...]"} seconds
+          Logging mode auto loads in {time >= 0 ? time : "[Standby ...]"} seconds
         </p>
         <div>
           <ClockLoader loading={mode} color={"#0000ff"} />
-          {mode == true ? null : <p style={{ color: "red" }}> Paused! </p>}
+          {mode == true ? null : <p style={{ color: "red" }}> Paused! Comparison Mode</p>}
         </div>
       </div>
+      
+      <toggler className={styles.toggler}>
+        <button
+          className={styles.button}
+          onClick={() => {
+            setMode(!mode);
+          }}
+        >
+          Mode Toggle
+        </button>
 
-      {/* {errorlog.length>0? errorlog.map( (item, index)=> (
-              <ul>
-                <li key={index}>{item}</li>
-              </ul> )) : <p> System is healthy: No errors caught</p>} */}
+        <select className={styles.select} name="timer" onChange={handlerTimer} value={timer}>
+          <option value={60}>1 minute</option>
+          <option value={180}>3 minutes</option>
+          <option value={300}>5 minutes</option>
+          <option value={600}>10 minutes</option>
+          <option value={3600}>1 hour</option>
+          <option value={15}>DEMO 15 secs</option>
+        </select>
+      </toggler>
 
-      <button
-        onClick={() => {
-          setMode(!mode);
-        }}
-      >
-        Mode Toggle
-      </button>
-
-      <select name="timer" onChange={handlerTimer} value={timer}>
-        <option value={60}>1 minute</option>
-        <option value={180}>3 minutes</option>
-        <option value={300}>5 minutes</option>
-        <option value={300}>5 minutes</option>
-        <option value={600}>10 minutes</option>
-        <option value={3600}>1 hour</option>
-        <option value={15}>DEMO 15 secs</option>
-      </select>
+      
 
       <table>
         <tr>

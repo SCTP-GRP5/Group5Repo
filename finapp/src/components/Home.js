@@ -36,49 +36,48 @@ function Home({isloggedin, setIsloggedin}) {
     let wrong = <FontAwesomeIcon icon={faXmark} bounce style={{color: "#f00000",}} />
 
     return(
-        <div className={styles.Main}>
+        <div className={styles.Home}>
             
-
-            {isloggedin? <h1>Home</h1>  : <h3>Please log in to access our features!</h3>}
-
-            
+            {isloggedin? <h3>Welcome back! Please check out our features above!</h3>  : <h3>Please log in to access our features!</h3>}
 
             <form  onSubmit={handlerFormSubmit}>
             {!isloggedin && 
                 <div className={styles.form}>
-                <div> 
-                    <label> Username</label>
-                    {form.username == login.username?  correct : wrong }
-                </div>
-                <input name="username" 
-                        value={form.username} 
-                        onChange={handlerFormChange} 
-                        placeholder="group5" />
-                <div> 
-                    <label> Email</label>
-                    {form.email == login.email?  correct : wrong }
-                </div>
-                <input name="email" 
-                        value={form.email} 
-                        onChange={handlerFormChange} 
-                        placeholder="group5@sctp.com" />
-                <div> 
-                    <label> Password</label>
-                    {form.password == login.password?  correct : wrong }
-                </div>
-                <input name="password" 
-                        value={form.password} 
-                        onChange={handlerFormChange} 
-                        placeholder="reactisfun" />
-                <button className={styles.login} 
-                        disabled={form.username !== login.username ||
-                        form.email !== login.email ||
-                        form.password !== login.password}
-                        >Login</button>
+                    <div> 
+                        <label> Username</label>
+                        {form.username == login.username?  correct : wrong }
+                    </div>
+                    <input name="username" 
+                            value={form.username} 
+                            onChange={handlerFormChange} 
+                            placeholder="group5" />
+                    <div> 
+                        <label> Email</label>
+                        {form.email == login.email?  correct : wrong }
+                    </div>
+                    <input name="email" 
+                            value={form.email} 
+                            onChange={handlerFormChange} 
+                            placeholder="group5@sctp.com" />
+                    <div> 
+                        <label> Password</label>
+                        {form.password == login.password?  correct : wrong }
+                    </div>
+                    <input name="password" 
+                            value={form.password} 
+                            onChange={handlerFormChange} 
+                            placeholder="reactisfun" />
+                    <button className={styles.loginBtn} 
+                            disabled={form.username !== login.username ||
+                            form.email !== login.email ||
+                            form.password !== login.password}
+                            >Login</button>
                 </div>}
-                {isloggedin && <button onClick={()=> {setIsloggedin(false) ; 
+                {isloggedin && <div className={styles.form}>
+                    <button className={styles.button} onClick={()=> {setIsloggedin(false) ; 
                     console.log("login --->", isloggedin)}}
-                    >Logout</button> }
+                    >Logout</button> 
+                    </div> }
             </form>
 
         </div>

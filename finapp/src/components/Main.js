@@ -49,7 +49,7 @@ function Main() {
   //========================================================================================================
   return (
     <div className={styles.Main}>
-      {isloggedin && <h1>Header : Financial Logging /Net Worth App</h1>}
+      {isloggedin && <div className={styles.header}> <h1> Group 5 Fin App</h1> </div>}
       <BrowserRouter>
         {isloggedin && (
           <nav className={styles.navbar}>
@@ -101,11 +101,13 @@ function Main() {
       </BrowserRouter>
 
       {isloggedin ? (
-        <div>
-          <h4> You are logged in </h4>
+        <div className={styles.footer}>
+          <h3 style={{color:"green"}}> Logged: IN </h3>
         </div>
       ) : (
-        <h3>You are logged out</h3>
+        <div className={styles.footer}>
+          <h3> Logged: OUT</h3>
+        </div>
       )}
     </div>
   );

@@ -2,37 +2,80 @@
     display: grid;
     width:30%;
     margin:auto;
-    border: black solid 1px;
+    border: #ff1d58 solid 3px;
     border-radius: 20px;
     padding:5%;
     grid-template-rows: repeat(7, 15%);
     object-fit: contain;
+    background-color: #fff685;
 }
 
-.login {
+.loginBtn {
     background-color: green;
     color: white;
     border: solid 1px green;
-    padding:5%;
+    padding:4%;
+    max-width: 50%;
+    margin:auto;
+    border-radius: 15px;
+
 }
 
-.login:hover {
+.loginBtn:hover {
     background-color: darkgreen;
     color: white;
     border: solid 1px darkgreen;
-    padding:5%;
 }
 
-.login:active {
+.loginBtn:active {
     background-color: darkgreen;
     color: white;
     border: solid 1px darkgreen;
-    padding:5%;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
-.login:disabled {
+.loginBtn:disabled {
     background-color: red;
     color: yellow;
     border: solid 1px red;
     padding:5%;
 }
+
+.button {
+    padding: 3%;
+    text-decoration: none;
+    border: solid blue;
+    margin: auto;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.button:hover {
+    padding-left : 3%;
+    padding-right: 3%;
+    text-decoration: none;
+    border: solid blue;
+    margin: auto;
+    border-radius: 15px;
+    background-color: blue;
+    color:white;
+}
+
+
+.button:hover {
+    padding-left : 3%;
+    padding-right: 3%;
+    text-decoration: none;
+    border: solid blue;
+    margin: auto;
+    border-radius: 15px;
+    background-color: blue;
+    color:white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* .Home{
+    background-color: #f75990;
+} */
