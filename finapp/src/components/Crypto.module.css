@@ -8,7 +8,7 @@
     grid-template-columns: repeat(3,30%);
     margin:auto;
     width: 50%;
-    border: 2px solid blue;
+    border: 2px solid #0000ff;
     /* padding-left: 20%; */
     padding-top: 1%;
     padding-bottom:1%;
@@ -35,4 +35,59 @@ table{
 
     margin:auto;
     width:60%;
+    text-align: left;
+    border: 1px solid blue;
+}
+
+th{
+    border: 1px solid blue;
+}
+
+td{
+    border: 1px solid black;
+    color:black;
+    font-size: 16px;
+}
+
+tr:nth-child(even){
+    background-color: lightblue;
+}
+
+.chart{
+    padding-top: 5%;
+    width: 90%;
+    margin:auto;
+    align-items: center;
+}
+
+.timer{
+
+    display:grid;
+    grid-template-columns: repeat(2,50%);
+    background-color: white;
+    margin:auto;
+    width: 60%;
+    padding-left: 10%;
+
+}
+
+
+button {
+    padding: 0.5%;
+    text-decoration: none;
+    border: solid blue;
+    margin: auto;
+    border-radius: 15px;
+    background-color: white;
+}
+
+button:hover {
+    padding-left : 0.5%;
+    padding-right: 0.5%;
+    text-decoration: none;
+    border: solid blue;
+    margin: auto;
+    border-radius: 15px;
+    background-color: blue;
+    color:white;
 }

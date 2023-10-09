@@ -15,14 +15,14 @@ Jian - CRYPTO!
 //libraries required for this app
 ----------------------------------
 
-react router
+a-react router
 
-axios
+b-axios
 
 react spinners
 npm install --save react-spinners
 
-font awesome
+c-font awesome
 https://fontawesome.com/docs/web/use-with/react/
 
 1-
@@ -61,3 +61,23 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 const element = <FontAwesomeIcon icon={faEnvelope} />
 
 ReactDOM.render(element, document.body)
+
+d- Recharts
+npm install recharts
+https://recharts.org/en-US/guide
+
+
+
+7th Oct 2023
+
+Ideas for more features -Home page
+
+- Watch list - have a feature to add the particular row of stock/etf/forex/crypto into favourites. and this adds into homepage/watchlist
+    use useContex to share data across all components
+
+- News
+    about current stocks/etf/forex/currency
+
+
+
+
