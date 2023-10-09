@@ -1,3 +1,5 @@
+// zhen jian https://github.com/zjzjzjzjzjzjzj 20231010
+
 // css
 import styles from "./Crypto.module.css";
 //library- function
@@ -462,6 +464,8 @@ function Crypto({
           {/* </ResponsiveContainer> */}
         </div>
       )}
+
+      <h4 style = {{color:"white"}}>Zhen Jian completed 20231010 https://github.com/zjzjzjzjzjzjzj</h4>
     </div>
   );
 }

@@ -22,6 +22,8 @@ function Main() {
   // ===================================================================================================
   // For Crypto Function - Keep in Main component so the states persists when changing navigation - Jian
   // ===================================================================================================
+  // zhen jian https://github.com/zjzjzjzjzjzjzj 20231010
+
   const [crypto, setCrypto] = useState([]);
   const [apiOptions, setapiOptions] = useState({
     method: "GET",
@@ -109,6 +111,8 @@ function Main() {
           <h3> Logged: OUT</h3>
         </div>
       )}
+
+      <h4 style = {{color:"white"}}>Zhen Jian completed 20231010 https://github.com/zjzjzjzjzjzjzj</h4>
     </div>
   );
 }
