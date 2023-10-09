@@ -31,39 +31,3 @@
     color:white;
 }
 
-.form {
-    display: grid;
-    width:30%;
-    margin:auto;
-    border: black solid 1px;
-    border-radius: 20px;
-    padding:3%;
-}
-
-.login {
-    background-color: green;
-    color: white;
-    border: solid 1px green;
-    padding:3%;
-}
-
-.login:hover {
-    background-color: darkgreen;
-    color: white;
-    border: solid 1px darkgreen;
-    padding:3%;
-}
-
-.login:active {
-    background-color: darkgreen;
-    color: white;
-    border: solid 1px darkgreen;
-    padding:3%;
-}
-
-.login:disabled {
-    background-color: red;
-    color: yellow;
-    border: solid 1px red;
-    padding:3%;
-}

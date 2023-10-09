@@ -1,4 +1,4 @@
-import styles from './Main.module.css';
+import styles from './Home.module.css';
 
 //library
 import {useState} from "react";
@@ -43,7 +43,9 @@ function Home({isloggedin, setIsloggedin}) {
 
             
 
-            <form className={styles.form} onSubmit={handlerFormSubmit}>
+            <form  onSubmit={handlerFormSubmit}>
+            {!isloggedin && 
+                <div className={styles.form}>
                 <div> 
                     <label> Username</label>
                     {form.username == login.username?  correct : wrong }
@@ -51,7 +53,7 @@ function Home({isloggedin, setIsloggedin}) {
                 <input name="username" 
                         value={form.username} 
                         onChange={handlerFormChange} 
-                        placeholder="username" />
+                        placeholder="group5" />
                 <div> 
                     <label> Email</label>
                     {form.email == login.email?  correct : wrong }
@@ -59,7 +61,7 @@ function Home({isloggedin, setIsloggedin}) {
                 <input name="email" 
                         value={form.email} 
                         onChange={handlerFormChange} 
-                        placeholder="email" />
+                        placeholder="group5@sctp.com" />
                 <div> 
                     <label> Password</label>
                     {form.password == login.password?  correct : wrong }
@@ -67,12 +69,13 @@ function Home({isloggedin, setIsloggedin}) {
                 <input name="password" 
                         value={form.password} 
                         onChange={handlerFormChange} 
-                        placeholder="password" />
-                {!isloggedin && <button className={styles.login} 
+                        placeholder="reactisfun" />
+                <button className={styles.login} 
                         disabled={form.username !== login.username ||
                         form.email !== login.email ||
                         form.password !== login.password}
-                        >Login</button>}
+                        >Login</button>
+                </div>}
                 {isloggedin && <button onClick={()=> {setIsloggedin(false) ; 
                     console.log("login --->", isloggedin)}}
                     >Logout</button> }
