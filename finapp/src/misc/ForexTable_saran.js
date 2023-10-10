@@ -18,17 +18,16 @@ function Table ({ data, fxmetadata }) {
                 </tr>
             </thead>
             <tbody>
-              {/* Jian modified this line of code to add another map function and slice function */}
-            {Object.entries(data).map(([date,values])=> ({date, ...values})).slice(0,15).map((item, index) => (
-            <tr key={index}>
+            {Object.entries(data).map(([date, values]) => (
+            <tr key={date}>
               <td>{fxmetadata["2. From Symbol"]}</td>
               <td>{fxmetadata["3. To Symbol"]}</td>
               <td>{fxmetadata["5. Last Refreshed"]}</td>
-              <td>{item["date"]}</td>
-              <td>{item["1. open"]}</td>
-              <td>{item["2. high"]}</td>
-              <td>{item["3. low"]}</td>
-              <td>{item["4. close"]}</td>
+              <td>{date}</td>
+              <td>{values["1. open"]}</td>
+              <td>{values["2. high"]}</td>
+              <td>{values["3. low"]}</td>
+              <td>{values["4. close"]}</td>
             </tr>
              ))}
             </tbody>
