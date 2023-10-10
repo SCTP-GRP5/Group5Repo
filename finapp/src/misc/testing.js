@@ -613,17 +613,29 @@ const data = {"Meta Data": {
 // console.log("meta data ---->",data["Meta Data"])
 // console.log("time series daily ---->" , data["Time Series FX (Daily)"]);
 
+//1
 const seriesObjofObj = data["Time Series FX (Daily)"];
+
+//2
 const seriesKeyValuepair= Object.entries(seriesObjofObj);
 // console.log("Key Value Pair------>", seriesKeyValuepair);
 
+//3
 const seriesArrayofObjects = seriesKeyValuepair.map(([date, value])=>
 ({date , ...value})
 )
 
 // console.log("map ---->", seriesArrayofObjects)
 
+//4
+// const sliceData = seriesArrayofObjects.slice(0,20);
 
-const sliceData = seriesArrayofObjects.slice(0,20);
+
+
+
+//full version 1-4
+const sliceData = Object.entries(seriesObjofObj).map(([date, value])=>
+({date , ...value})
+).slice(0,10);
 
 console.log("sliced data ====>" , sliceData);
