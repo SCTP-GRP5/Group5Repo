@@ -182,11 +182,19 @@ function Crypto({
       // console.log(response.data);
       // console.log("Obj unpacked:",response.data["Realtime Currency Exchange Rate"])
 
-      // ~array of objects
-      setCrypto((prevCrypto) => [
+      if (response.data["Realtime Currency Exchange Rate"]["1. From_Currency Code"] === undefined) {
+        console.log("Error! Undefined")
+        return
+      }
+      else {
+        // ~array of objects
+        setCrypto((prevCrypto) => [
         ...prevCrypto,
-        response.data["Realtime Currency Exchange Rate"],
-      ]);
+       response.data["Realtime Currency Exchange Rate"]
+       ]);
+
+      }
+
     } catch (error) {
       console.error(error);
       console.error(error.response.data);
@@ -233,7 +241,7 @@ function Crypto({
     <div className={styles.Crypto}>
       <h2>Crypto Exchange Rates- Select Crypto and Currency</h2>
 
-      <loading className={styles.loading}>
+      <div name="loading" className={styles.loading}>
         <FontAwesomeIcon
           icon={faLaptopCode}
           size="2xl"
@@ -245,9 +253,9 @@ function Crypto({
         </div>
 
         <FontAwesomeIcon icon={faServer} size="2xl" className={styles.icon} />
-      </loading>
+      </div>
 
-      <controls className={styles.controls}>
+      <div name="controls" className={styles.controls}>
         <button className={styles.button} onClick={() => loadCrypto()}>Get Data</button>
         <button
           className={styles.button}
@@ -286,7 +294,7 @@ function Crypto({
           ))}
           <button type="submit">Submit</button>
         </select>
-      </controls>
+      </div>
       
 
       {/* Manual Testing Mode */}
@@ -302,7 +310,7 @@ function Crypto({
         </div>
       </div>
       
-      <toggler className={styles.toggler}>
+      <div className={styles.toggler}>
         <button
           className={styles.button}
           onClick={() => {
@@ -320,7 +328,7 @@ function Crypto({
           <option value={3600}>1 hour</option>
           <option value={15}>DEMO 15 secs</option>
         </select>
-      </toggler>
+      </div>
 
       
 
@@ -337,25 +345,40 @@ function Crypto({
           <th>Bid Price</th>
           <th>Ask Price</th>
         </tr>
-        {crypto.map((item, keys) => (
-          <tr key={keys}>
-            <td>{keys + 1}</td>
-            <td>{item["1. From_Currency Code"]}</td>
-            <td>{item["2. From_Currency Name"]}</td>
-            {/* <td>{item["3. To_Currency Code"]}</td> */}
-            <td>{item["4. To_Currency Name"]}</td>
-            <td>{parseFloat(item["5. Exchange Rate"]).toFixed(2)}</td>
-            <td>{item["6. Last Refreshed"]}</td>
-            <td>{item["7. Time Zone"]}</td>
-            <td>{`${item["3. To_Currency Code"]}  ${parseFloat(
-              item["8. Bid Price"]
-            ).toFixed(2)}`}</td>
-            <td>{`${item["3. To_Currency Code"]}  ${parseFloat(
-              item["9. Ask Price"]
-            ).toFixed(2)}`}</td>
-          </tr>
-        ))}
-        <tr>
+        {crypto.length>0 && crypto[crypto.length-1]["1. From_Currency Code"] !== undefined ? 
+        
+          crypto.map((item, keys) => (
+            <tr key={keys}>
+              <td>{keys + 1}</td>
+              <td>{item["1. From_Currency Code"]}</td>
+              <td>{item["2. From_Currency Name"]}</td>
+              {/* <td>{item["3. To_Currency Code"]}</td> */}
+              <td>{item["4. To_Currency Name"]}</td>
+              <td>{parseFloat(item["5. Exchange Rate"]).toFixed(2)}</td>
+              <td>{item["6. Last Refreshed"]}</td>
+              <td>{item["7. Time Zone"]}</td>
+              <td>{`${item["3. To_Currency Code"]}  ${parseFloat(
+                item["8. Bid Price"]
+              ).toFixed(2)}`}</td>
+              <td>{`${item["3. To_Currency Code"]}  ${parseFloat(
+                item["9. Ask Price"]
+              ).toFixed(2)}`}</td>
+            </tr>
+          ))
+              :
+                <tr >
+                <td> </td>
+                <td>No data </td>
+                <td>No data </td>
+                {/* <td>{item["3. To_Currency Code"]}</td> */}
+                <td>No data </td>
+                <td>No data </td>
+                <td>No data </td>
+                <td>No data </td>
+                <td>No data </td>
+                <td>No data </td>
+              </tr>}
+         <tr>
           <th>#</th>
           <th>Crypto Code</th>
           <th>Cypto Name</th>
@@ -368,6 +391,16 @@ function Crypto({
           <th>Ask Price</th>
         </tr>
       </table>
+
+      <div className={styles.timer}>
+        <p>
+          Logging mode auto loads in {time >= 0 ? time : "[Standby ...]"} seconds
+        </p>
+        <div>
+          <ClockLoader loading={mode} color={"#0000ff"} />
+          {mode == true ? null : <p style={{ color: "red" }}> Paused! Comparison Mode</p>}
+        </div>
+      </div>
 
       {mode && (
         <div>
@@ -465,7 +498,7 @@ function Crypto({
         </div>
       )}
 
-      <h4 style = {{color:"white"}}>Zhen Jian completed 20231010 https://github.com/zjzjzjzjzjzjzj</h4>
+      <h4 style = {{color:"white"}}>Zhen Jian completed 20231011 https://github.com/zjzjzjzjzjzjzj</h4>
     </div>
   );
 }

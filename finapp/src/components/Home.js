@@ -1,11 +1,15 @@
 import styles from './Home.module.css';
 
 //library
-import {useState} from "react";
+import React, {useState} from "react";
 
 //styling library
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck , faXmark} from '@fortawesome/free-solid-svg-icons';
+
+//images
+import dollar from '../assets/dollar.png'
+import dollar2 from '../assets/dollar2.png'
 
 function Home({isloggedin, setIsloggedin}) {
 
@@ -39,6 +43,14 @@ function Home({isloggedin, setIsloggedin}) {
         <div className={styles.Home}>
             
             {isloggedin? <h3>Welcome back! Please check out our features above!</h3>  : <h3>Please log in to access our features!</h3>}
+
+            {isloggedin &&    
+                 <div>
+                    <div className={styles["spinning-image"]}>
+                        <img src = {dollar2} alt="spinning dollar" className={styles["spin-image"]}/>
+                    </div>
+                </div>}
+
 
             <form  onSubmit={handlerFormSubmit}>
             {!isloggedin && 
@@ -79,6 +91,9 @@ function Home({isloggedin, setIsloggedin}) {
                     >Logout</button> 
                     </div> }
             </form>
+
+
+            <h4 style = {{color:"white"}}>Zhen Jian completed 20231011 https://github.com/zjzjzjzjzjzjzj</h4>
 
         </div>
     );

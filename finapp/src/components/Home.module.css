@@ -76,6 +76,45 @@
     transform: translateY(4px);
 }
 
+.spinning-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    /* background-color: nonewhite; */
+    /* border-style: solid; */
+    /* border-width: 2px;
+    border-color:black; */
+    margin: auto;
+    width: 30%;
+    /* background-blend-mode: normal; */
+    padding: 7%;
+    
+  }
+  
+.spin-image {
+    width: 500px; /* adjust the size here */
+    animation: spin 5s linear infinite; /* changed speed  */
+
+}
+
+.spin-image:hover {
+    width: 700px; /* adjust the size here */
+    animation: spin 1s linear infinite; /* changed speed  */
+}
+  
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+
+
+
 /* .Home{
     background-color: #f75990;
 } */

@@ -51,7 +51,7 @@ function Main() {
   //========================================================================================================
   return (
     <div className={styles.Main}>
-      {isloggedin && <div className={styles.header}> <h1> Group 5 Fin App</h1> </div>}
+      {isloggedin && <div className={styles.header}> <h1> SCTP Cohort 4 Group 5 Finance App</h1> </div>}
       <BrowserRouter>
         {isloggedin && (
           <nav className={styles.navbar}>
@@ -112,7 +112,6 @@ function Main() {
         </div>
       )}
 
-      <h4 style = {{color:"white"}}>Zhen Jian completed 20231010 https://github.com/zjzjzjzjzjzjzj</h4>
     </div>
   );
 }
