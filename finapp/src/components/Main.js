@@ -5,7 +5,7 @@ import styles from './Main.module.css';
 import Home from './Home';
 import Stocks from './Stocks';
 import Crypto from './Crypto';
-import ETF from './ETF';
+import Top20 from './Top20';
 import Forex from './Forex';
 
 
@@ -45,7 +45,7 @@ function Main() {
                     <Link className={styles.link} to= "/">Home</Link>
                     <Link className={styles.link} to= "/crypto">Crypto</Link>
                     <Link className={styles.link} to= "/stocks">Stocks</Link>
-                    <Link className={styles.link} to= "/etf">ETF</Link>
+                    <Link className={styles.link} to= "/top20">Top 20</Link>
                     <Link className={styles.link} to= "/forex">Forex</Link>
                 </nav>
                 <Routes>
@@ -63,7 +63,7 @@ function Main() {
                                                 />}
                                                  />
                     <Route path ="/stocks" element={<Stocks/>}/>
-                    <Route path = "/etf" element={<ETF />} />
+                    <Route path = "/top20" element={<Top20 />} />
                     <Route path ="/forex" element={<Forex/>}/>
                 </Routes>
             </BrowserRouter>
