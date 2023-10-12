@@ -1,3 +1,26 @@
-.Forex{
-    color:orange;
+
+  .select{
+    color:#584cd9;
+    border: solid #6234c5 2px;
+    padding: 1%;
+    margin:auto;
+    border-radius:10px ;
+    font-size: 15px;
+}
+
+.button{
+    padding: 1%;
+    text-decoration: none;
+    border: solid rgb(97, 97, 209);
+    margin: auto;
+    border-radius: 30px;
+    background-color: rgb(151, 151, 221);
+    color:white;
+}
+
+.chart{
+    padding-top: 5%;
+    width: 90%;
+    margin:auto;
+    align-items: center;
 }
