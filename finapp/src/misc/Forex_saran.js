@@ -1,7 +1,7 @@
 import styles from './Forex.module.css';
 import { useState } from 'react';
 import forexAPI from '../api/forexapi';
-import ForexTable from "./ForexTable";
+import ForexTable from "../components/ForexTable";
 import axios from "axios";
  
 function Forex() {
