@@ -62,7 +62,8 @@ function Home({isloggedin, setIsloggedin}) {
                     <input name="username" 
                             value={form.username} 
                             onChange={handlerFormChange} 
-                            placeholder="group5" />
+                            placeholder="group5" 
+                            required/>
                     <div> 
                         <label> Email</label>
                         {form.email == login.email?  correct : wrong }
@@ -70,7 +71,8 @@ function Home({isloggedin, setIsloggedin}) {
                     <input name="email" 
                             value={form.email} 
                             onChange={handlerFormChange} 
-                            placeholder="group5@sctp.com" />
+                            placeholder="group5@sctp.com"
+                            required />
                     <div> 
                         <label> Password</label>
                         {form.password == login.password?  correct : wrong }
@@ -78,7 +80,8 @@ function Home({isloggedin, setIsloggedin}) {
                     <input name="password" 
                             value={form.password} 
                             onChange={handlerFormChange} 
-                            placeholder="reactisfun" />
+                            placeholder="reactisfun"
+                            required />
                     <button className={styles.loginBtn} 
                             disabled={form.username !== login.username ||
                             form.email !== login.email ||

@@ -10,6 +10,14 @@
     background-color: #fff685;
 }
 
+input:invalid {
+    border:solid 2px red;
+}
+
+input:focus:invalid {
+    border:solid 2px red;
+}
+
 .loginBtn {
     background-color: green;
     color: white;
@@ -99,7 +107,7 @@
 }
 
 .spin-image:hover {
-    width: 700px; /* adjust the size here */
+    width: 600px; /* adjust the size here */
     animation: spin 1s linear infinite; /* changed speed  */
 }
   
