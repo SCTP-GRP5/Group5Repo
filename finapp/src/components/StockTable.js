@@ -1,45 +1,41 @@
+import React from 'react';
 import styles from './StockTable.module.css';
 
-function Table({ stockList }) {
+function StockTable({ data, metadata }) {
   return (
     <div>
       <table className={styles.table}>
         <thead>
           <tr>
             <th>Symbol</th>
-            <th>Name</th>
-            <th>Currency</th>
-            <th>Exchange</th>
-            <th>MIC Code</th>
-            <th>Country</th>
-            <th>Type</th>
+            <th>Last Refreshed</th>
+            <th>Date</th>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+            <th>Volume</th>
           </tr>
         </thead>
         <tbody>
-          {/* Check if stockList is defined and not empty before mapping */}
-          {stockList && stockList.length > 0 ? (
-            stockList.map((stock) => (
-              <tr key={stock.id}>
-                <td>{stock.symbol}</td>
-                <td>{stock.name}</td>
-                <td>{stock.currency}</td>
-                <td>{stock.exchange}</td>
-                <td>{stock.MIC}</td>
-                <td>{stock.country}</td>
-                <td>{stock.type}</td>
-              </tr>
-            ))
-          ) : (
-            // Display a message if stockList is empty or undefined
-            <tr>
-              <td colSpan="7">No stock data available</td>
+          {Object.entries(data).map(([date, values]) => (
+            <tr key={date}>
+              <td>{metadata["2. Symbol"]}</td>
+              <td>{metadata["3. Last Refreshed"]}</td>
+              <td>{date}</td>
+              <td>{values["1. open"]}</td>
+              <td>{values["2. high"]}</td>
+              <td>{values["3. low"]}</td>
+              <td>{values["4. close"]}</td>
+              <td>{values["5. volume"]}</td>
             </tr>
-          )}
+          ))}
         </tbody>
       </table>
     </div>
   );
 }
 
-export default Table;
+export default StockTable;
+
 
