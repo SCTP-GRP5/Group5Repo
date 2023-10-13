@@ -1,7 +1,22 @@
+.Forex{
+    color:#0049b7;
+    align-items: center;
+}
 
-  .select{
-    color:#584cd9;
-    border: solid #6234c5 2px;
+.controls{
+
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(4, 20%);
+    padding-left:10%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.select{
+    display:grid;
+    color:#2c294b;
+    border: solid #7241dc 2px;
     padding: 1%;
     margin:auto;
     border-radius:10px ;
@@ -11,10 +26,10 @@
 .button{
     padding: 1%;
     text-decoration: none;
-    border: solid rgb(97, 97, 209);
+    border: solid rgb(75, 71, 84);
     margin: auto;
     border-radius: 30px;
-    background-color: rgb(151, 151, 221);
+    background-color: rgb(157, 139, 180);
     color:white;
 }
 
