@@ -239,7 +239,7 @@ function Crypto({
   //=========================================================================================================================================
   return (
     <div className={styles.Crypto}>
-      <h2>Crypto Exchange Rates- Select Crypto and Currency</h2>
+      <h2>Crypto Exchange Rates</h2>
 
       <div name="loading" className={styles.loading}>
         <FontAwesomeIcon
@@ -302,11 +302,14 @@ function Crypto({
 
       <div className={styles.timer}>
         <p>
-          Logging mode auto loads in {time >= 0 ? time : "[Standby ...]"} seconds
+          Logging mode auto loads in <span className={styles.time}>{time >= 0 ? time : "Standby ..."}  </span> seconds
         </p>
         <div>
           <ClockLoader loading={mode} color={"#0000ff"} />
-          {mode == true ? null : <p style={{ color: "red" }}> Paused! Comparison Mode</p>}
+          {mode == true ? null : <p style={{ color: "red", 
+                                              fontSize:"18px", 
+                                              fontWeight:"bold",
+                                              textShadow:"1px 1px grey" }}> Paused! Comparison Mode</p>}
         </div>
       </div>
       
@@ -394,17 +397,20 @@ function Crypto({
 
       <div className={styles.timer}>
         <p>
-          Logging mode auto loads in {time >= 0 ? time : "[Standby ...]"} seconds
+          Logging mode auto loads in <span className={styles.time}>{time >= 0 ? time : "Standby ..."}  </span> seconds
         </p>
         <div>
           <ClockLoader loading={mode} color={"#0000ff"} />
-          {mode == true ? null : <p style={{ color: "red" }}> Paused! Comparison Mode</p>}
+          {mode == true ? null : <p style={{ color: "red", 
+                                              fontSize:"18px", 
+                                              fontWeight:"bold",
+                                              textShadow:"1px 1px grey" }}> Paused! Comparison Mode</p>}
         </div>
       </div>
 
       {mode && (
         <div>
-          <p> Auto Logging Mode</p>
+          <h4 style={{textDecoration:"underline" , fontSize:"25px"}}> Auto Logging Mode</h4>
           <LineChart
             width={1200}
             height={700}
@@ -436,7 +442,7 @@ function Crypto({
 
       {!mode && (
         <div>
-          <p> Comparison Mode</p>
+          <h4 style={{textDecoration:"underline" , fontSize:"25px"}}> Comparison Mode</h4>
           {/* <ResponsiveContainer width="100%" height="100%"> */}
           <BarChart
             className={styles.chart}

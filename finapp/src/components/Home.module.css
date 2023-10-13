@@ -101,13 +101,13 @@ input:focus:invalid {
   }
   
 .spin-image {
-    width: 500px; /* adjust the size here */
+    width: 100%; /* adjust the size here */
     animation: spin 5s linear infinite; /* changed speed  */
 
 }
 
 .spin-image:hover {
-    width: 600px; /* adjust the size here */
+    width: 130%; /* adjust the size here */
     animation: spin 1s linear infinite; /* changed speed  */
 }
   
@@ -120,8 +120,6 @@ input:focus:invalid {
     }
 }
   
-
-
 
 /* .Home{
     background-color: #f75990;
